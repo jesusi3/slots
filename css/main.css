@@ -1,0 +1,78 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+body{
+    display: block;
+    /* justify-content: center;
+    align-items: center; */
+
+}
+h1 {
+    text-align: center;
+}
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+main {
+
+    /* display: grid;
+    height: 300px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 4fr 1fr ; */
+    /* height: 100vh; */
+    flex-direction: column;
+}
+
+section {
+    /* display: flex; */
+    flex-direction: row; 
+}
+/* .scores{
+    display: grid;
+
+} */
+
+.winnings {
+    border: 5px solid grey;
+    
+}
+.spins {
+    border: 5px solid grey;
+}
+
+.slot-row {
+    height: 300px;
+    width: 300px;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    border: 5px solid grey;
+    gap: 3px ;
+}
+
+.slot {
+    border: 5px solid black;
+    height: 290px;
+    justify-content: center;
+    align-items: center;
+}
+div > button{
+    display: block ;
+}
+div{
+    justify-content: center;
+    align-items: center;
+}
+.button-div {
+    justify-content: center;
+    align-items: center;
+}
+.child{
+    display:  inline-block;
+}
