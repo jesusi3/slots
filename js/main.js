@@ -8,6 +8,8 @@ const SLOT_LOOKUP ={
         3: "https://cdn3.iconfinder.com/data/icons/slot-machine-symbols-filled-outline/256/cherry-128.png",
         4: "https://www.usaonlinecasino.com/wp-content/uploads/2019/04/if_casino_slot_poker_money_834387.png",
         5: "https://www.katiewager.com/wp-content/uploads/2018/05/slot-machine-1.png",
+        6: "https://cdn3.iconfinder.com/data/icons/slot-machine-symbols-filled-outline/256/diamond-256.png",
+        7: "https://cdn4.iconfinder.com/data/icons/slot-machine-icons/200/casino_horse_shoe-256.png"
 }
 /*----- app's state (variables) -----*/
 /* 2. variables that change throughout the game  
@@ -71,17 +73,20 @@ function init() {
 function handleSwitch(evt) {
         //guard
         if(evt.target.tagName !== 'BUTTON') return;
-        console.log(evt.target);
-        // evt.target.textContent = ''
         //function to randomize the slotmachine results
-        results = getRandomSlots();
 
-        render();
+        results.sL1 = getRandomSlots();
+        results.sL2 = getRandomSlots();
+        results.sL3 = getRandomSlots();
+        results.sL4 = getRandomSlots();
+        results.sL5 = getRandomSlots();
+        render()
 }
 
 function getRandomSlots() {
         const rndSlot = Object.keys(SLOT_LOOKUP);
-        
+        const rndIdx = Math.floor(Math.random() * rndSlot.length);
+        return rndSlot[rndIdx];
 }
 
 function render() {
@@ -96,13 +101,8 @@ function renderScore() {
 
 function renderResults() {
         imgEl1.src = SLOT_LOOKUP[results.sL1];
-        console.log(imgEl1);
         imgEl2.src = SLOT_LOOKUP[results.sL2];
-        console.log(imgEl2);
         imgEl3.src = SLOT_LOOKUP[results.sL3];
-        console.log(imgEl3);
         imgEl4.src = SLOT_LOOKUP[results.sL4];
-        console.log(imgEl4);
         imgEl5.src = SLOT_LOOKUP[results.sL5];
-        console.log(imgEl5);
 }
