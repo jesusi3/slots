@@ -3,7 +3,11 @@
         1-1. A variable for The number of time you can spin in one game (5)
 */
 const SLOT_LOOKUP ={
-        itemCard1
+        1: "https://cdn3.iconfinder.com/data/icons/slot-machine-symbols-filled-outline/256/plum-128.png",
+        2: "https://www.shareicon.net/data/256x256/2016/10/11/841519_numbers_512x512.png",
+        3: "https://cdn3.iconfinder.com/data/icons/slot-machine-symbols-filled-outline/256/cherry-128.png",
+        4: "https://www.usaonlinecasino.com/wp-content/uploads/2019/04/if_casino_slot_poker_money_834387.png",
+        5: "https://www.katiewager.com/wp-content/uploads/2018/05/slot-machine-1.png",
 }
 /*----- app's state (variables) -----*/
 /* 2. variables that change throughout the game  
@@ -13,8 +17,9 @@ const SLOT_LOOKUP ={
         2-4. a variable for indientfy the gamestatus
 */
 let gamestatus;
-let spins_left;
-let ;
+let spinsleft;
+let amount;
+let results;
 /*----- cached element references -----*/
 /* 3. pull the html documents into javascript
 3-1. cach the winnings tag 
@@ -24,8 +29,12 @@ let ;
 3-5. cach the spins-left section
 */
 let winnEl = document.getElementById('wins');
-console.log(winnEl)
 let SpinEl = document.getElementById('spin');
+let imgEl1 = document.getElementById('sect1');
+let imgEl2 = document.getElementById('sect2');
+let imgEl3 = document.getElementById('sect3');
+let imgEl4 = document.getElementById('sect4');
+let imgEl5 = document.getElementById('sect5');
 /*----- event listeners -----*/
 /* 4. create event listeners for the slots
         4-1. Event listener play again
@@ -41,3 +50,41 @@ let SpinEl = document.getElementById('spin');
         5-6. create a fucntion that initializes the whole game, so rests everything to zero
 
 */
+init()
+
+function init() {
+        amount = 1000;
+        spinsLeft = 5;
+        results = {
+                sL1: 1,
+                sL2: 1,
+                sL3: 1,
+                sL4: 1,
+                sL5: 1,
+        };
+        gamestatus='';
+        render();
+}
+
+function render() {
+        renderScore();
+        renderResults();
+}
+
+function renderScore() {
+        winnEl.textContent = amount;
+        SpinEl.textContent = spinsLeft;
+}
+
+function renderResults() {
+        imgEl1.src = SLOT_LOOKUP[results.sL1];
+        console.log(imgEl1);
+        imgEl2.src = SLOT_LOOKUP[results.sL2];
+        console.log(imgEl2);
+        imgEl3.src = SLOT_LOOKUP[results.sL3];
+        console.log(imgEl3);
+        imgEl4.src = SLOT_LOOKUP[results.sL4];
+        console.log(imgEl4);
+        imgEl5.src = SLOT_LOOKUP[results.sL5];
+        console.log(imgEl5);
+}

@@ -53,7 +53,7 @@ section {
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     border: 5px solid grey;
-    gap: 3px ;
+    gap: 5px ;
 }
 
 .slot {
@@ -62,6 +62,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: black;
 }
 div > button{
     display: block ;
@@ -78,5 +79,8 @@ div{
 } */
 .child{
     display:  inline-block;
-    
+}
+
+img {
+    width: 100%;
 }
