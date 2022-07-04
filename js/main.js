@@ -40,6 +40,7 @@ let imgEl5 = document.getElementById('sect5');
         4-1. Event listener play again
         4-2. Event listener Switch for next spin    
 */
+document.querySelector('.parent').addEventListener('click', handleSwitch);
 /*----- functions -----*/
 /* 5.  create the functions to run the content and logic of the game
         5-1. Initialize() to call for the game to start
@@ -64,6 +65,23 @@ function init() {
         };
         gamestatus='';
         render();
+}
+// in response to user interaction(click),
+//the slots should change to random(introduce random function)
+function handleSwitch(evt) {
+        //guard
+        if(evt.target.tagName !== 'BUTTON') return;
+        console.log(evt.target);
+        // evt.target.textContent = ''
+        //function to randomize the slotmachine results
+        results = getRandomSlots();
+
+        render();
+}
+
+function getRandomSlots() {
+        const rndSlot = Object.keys(SLOT_LOOKUP);
+        
 }
 
 function render() {
