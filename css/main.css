@@ -47,7 +47,7 @@ section {
 
 .slot-row {
     height: 300px;
-    width: 300px;
+    width: 500px;
     display: grid;
     justify-content: space-between;
     align-items: center;
@@ -59,20 +59,24 @@ section {
 .slot {
     border: 5px solid black;
     height: 290px;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 div > button{
     display: block ;
+    width: 150%;
+    height: 10vh;
 }
 div{
     justify-content: center;
     align-items: center;
 }
-.button-div {
+/* .button-div {
     justify-content: center;
     align-items: center;
-}
+} */
 .child{
     display:  inline-block;
+    
 }
