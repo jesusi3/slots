@@ -1,35 +1,27 @@
 /*----- constants -----*/
-/* 1. we create the variable that wont change 
-        1-1. A variable for The number of time you can spin in one game (5)
-*/
 const SLOT_LOOKUP ={
         1: "https://cdn3.iconfinder.com/data/icons/slot-machine-symbols-filled-outline/256/plum-128.png",
         2: "https://www.shareicon.net/data/256x256/2016/10/11/841519_numbers_512x512.png",
         3: "https://cdn3.iconfinder.com/data/icons/slot-machine-symbols-filled-outline/256/cherry-128.png",
         4: "https://www.usaonlinecasino.com/wp-content/uploads/2019/04/if_casino_slot_poker_money_834387.png",
         5: "https://www.katiewager.com/wp-content/uploads/2018/05/slot-machine-1.png",
-        6: "https://cdn3.iconfinder.com/data/icons/slot-machine-symbols-filled-outline/256/diamond-256.png",
-        7: "https://cdn4.iconfinder.com/data/icons/slot-machine-icons/200/casino_horse_shoe-256.png"
-}
+        // 6: "https://cdn3.iconfinder.com/data/icons/slot-machine-symbols-filled-outline/256/diamond-256.png",
+        // 7: "https://cdn4.iconfinder.com/data/icons/slot-machine-icons/200/casino_horse_shoe-256.png"
+};
+
+const WINNING_COMBOS = [
+        [1,1,1],
+        [2,2,2],
+        [3,3,3],
+        [4,4,4],
+        [5,5,5],
+];
 /*----- app's state (variables) -----*/
-/* 2. variables that change throughout the game  
-        2-1. a variable for how many spins left
-        2-2. a varibale for the 5 changing slots
-        2-3. a variable for the winnings each spin
-        2-4. a variable for indientfy the gamestatus
-*/
 let gamestatus;
 let spinsleft;
 let amount;
 let results;
 /*----- cached element references -----*/
-/* 3. pull the html documents into javascript
-3-1. cach the winnings tag 
-3-2. cach the playagain button
-3-3. cach the switch
-3-4. cach slot sections
-3-5. cach the spins-left section
-*/
 let winnEl = document.getElementById('wins');
 let SpinEl = document.getElementById('spin');
 let imgEl1 = document.getElementById('sect1');
@@ -38,21 +30,8 @@ let imgEl3 = document.getElementById('sect3');
 let imgEl4 = document.getElementById('sect4');
 let imgEl5 = document.getElementById('sect5');
 /*----- event listeners -----*/
-/* 4. create event listeners for the slots
-        4-1. Event listener play again
-        4-2. Event listener Switch for next spin    
-*/
 document.querySelector('.parent').addEventListener('click', handleSwitch);
 /*----- functions -----*/
-/* 5.  create the functions to run the content and logic of the game
-        5-1. Initialize() to call for the game to start
-        5-2. create a function for for the event listener called handleSwitch()
-        5-3. create a function that gets the game status and judges whether to end, or keep playing
-        5-4. create a function that calcuates the amount of combos to get money
-        5-5. create a function that renders the slots on the screen
-        5-6. create a fucntion that initializes the whole game, so rests everything to zero
-
-*/
 init()
 
 function init() {
@@ -74,13 +53,30 @@ function handleSwitch(evt) {
         //guard
         if(evt.target.tagName !== 'BUTTON') return;
         //function to randomize the slotmachine results
-
         results.sL1 = getRandomSlots();
         results.sL2 = getRandomSlots();
         results.sL3 = getRandomSlots();
         results.sL4 = getRandomSlots();
         results.sL5 = getRandomSlots();
-        render()
+        amount = getTotal();
+        render();
+} 
+
+function getTotal(){
+        // let asArray = Object.fromEntries(results);
+        // let filtered = asArray.filter(function(num){
+        //         return num.results.keys
+        // });
+
+        // if(results.sL1 === results.sL2 && results.sL3){
+        //         if(results.sL1 === results.sL4 && results.sL5){
+        //                 amount *= 2;
+        //         }
+        // }return amount;
+        for( let key in results){
+                
+        }
+        // console.log(Object.values(results))
 }
 
 function getRandomSlots() {

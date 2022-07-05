@@ -1,79 +1,38 @@
-<!-- /*----- constants -----*/
-const RPS_LOOKUP = {
-  r: {img: 'imgs/rock.png', beats: 's'},
-  p: {img: 'imgs/paper.png', beats: 'r'},
-  s: {img: 'imgs/scissors.png', beats: 'p'},
-};
+/*----- constants -----*/
+/* 1. we create the variable that wont change 
+        1-1. A variable for The number of time you can spin in one game (5)
+*/
 
 /*----- app's state (variables) -----*/
-let scores; // Object with keys of 'p' (player), 't' (tie) & 'c' (computer)
-let results; // Object with keys of 'p' & 'c'
-let winner;  // '', 'p', 't', 'c'
+/* 2. variables that change throughout the game  
+        2-1. a variable for how many spins left
+        2-2. a varibale for the 5 changing slots
+        2-3. a variable for the winnings each spin
+        2-4. a variable for indientfy the gamestatus
+*/
 
 /*----- cached element references -----*/
-const pResultEl = document.getElementById('p-result');
-const cResultEl = document.getElementById('c-result');
+/* 3. pull the html documents into javascript
+3-1. cach the winnings tag 
+3-2. cach the playagain button
+3-3. cach the switch
+3-4. cach slot sections
+3-5. cach the spins-left section
+*/
 
 /*----- event listeners -----*/
-document.querySelector('main').addEventListener('click', handleChoice);
+/* 4. create event listeners for the slots
+        4-1. Event listener play again
+        4-2. Event listener Switch for next spin    
+*/
 
 /*----- functions -----*/
-init();
+/* 5.  create the functions to run the content and logic of the game
+        5-1. Initialize() to call for the game to start
+        5-2. create a function for for the event listener called handleSwitch()
+        5-3. create a function that gets the game status and judges whether to end, or keep playing
+        5-4. create a function that calcuates the amount of combos to get money
+        5-5. create a function that renders the slots on the screen
+        5-6. create a fucntion that initializes the whole game, so rests everything to zero
 
-// Initialize all state, then call render
-function init() {
-  scores = {
-    p: 0,
-    t: 0,
-    c: 0,
-  };
-  results = {
-    p: 'r',
-    c: 'r'
-  };
-  winner = '';
-  render();
-}
-
-// In response to user interaction (click), we update all 
-// impacted state, then call render()
-function handleChoice(evt) {
-  // Guards
-  if (evt.target.tagName !== 'BUTTON') return;
-  results.p = evt.target.textContent.toLowerCase();
-  // randomly get computer's choice
-  results.c = getRandomRPS();
-  winner = getWinner();
-  scores[winner] += 1;
-  render();
-}
-
-function getWinner() {
-  if (results.p === results.c) return 't';
-  return RPS_LOOKUP[results.p].beats === results.c ? 'p' : 'c';
-}
-
-function getRandomRPS() {
-  const rps = Object.keys(RPS_LOOKUP);
-  const rndIdx = Math.floor(Math.random() * rps.length);
-  return rps[rndIdx];
-}
-
-// transfer/visualize all state to the DOM
-function render() {
-  renderScores();
-  renderResults();
-}
-
-function renderResults() {
-  pResultEl.src = RPS_LOOKUP[results.p].img;
-  cResultEl.src = RPS_LOOKUP[results.c].img;
-}
-
-function renderScores() {
-  for (let scoreKey in scores) {
-    // TODO: refactor for efficiency
-    const scoreEl = document.getElementById(`${scoreKey}-score`);
-    scoreEl.textContent = scores[scoreKey];
-  }
-} -->
+*/
