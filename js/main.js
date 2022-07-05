@@ -9,13 +9,6 @@ const SLOT_LOOKUP ={
         // 7: "https://cdn4.iconfinder.com/data/icons/slot-machine-icons/200/casino_horse_shoe-256.png"
 };
 
-const WINNING_COMBOS = [
-        [1,1,1],
-        [2,2,2],
-        [3,3,3],
-        [4,4,4],
-        [5,5,5],
-];
 /*----- app's state (variables) -----*/
 let gamestatus;
 let spinsleft;
@@ -30,7 +23,7 @@ let imgEl3 = document.getElementById('sect3');
 let imgEl4 = document.getElementById('sect4');
 let imgEl5 = document.getElementById('sect5');
 /*----- event listeners -----*/
-document.querySelector('.parent').addEventListener('click', handleSwitch);
+document.querySelector('#switch').addEventListener('click', handleSwitch);
 /*----- functions -----*/
 init()
 
@@ -52,6 +45,7 @@ function init() {
 function handleSwitch(evt) {
         //guard
         if(evt.target.tagName !== 'BUTTON') return;
+        console.log(evt.target)
         //function to randomize the slotmachine results
         results.sL1 = getRandomSlots();
         results.sL2 = getRandomSlots();
@@ -59,24 +53,28 @@ function handleSwitch(evt) {
         results.sL4 = getRandomSlots();
         results.sL5 = getRandomSlots();
         amount = getTotal();
+        spinsLeft--;
         render();
+        // console.log(evt.target)
 } 
 
 function getTotal(){
-        // let asArray = Object.fromEntries(results);
-        // let filtered = asArray.filter(function(num){
-        //         return num.results.keys
-        // });
+        let five = Object.values(results);
+        console.log(five);
+        const count = five.reduce(function(tally, vote) {
+                tally[vote] = tally[vote] ? tally[vote] + 1 : 1;
+                return tally;
+                }, [])
+                console.log(count)
 
-        // if(results.sL1 === results.sL2 && results.sL3){
-        //         if(results.sL1 === results.sL4 && results.sL5){
-        //                 amount *= 2;
-        //         }
-        // }return amount;
-        for( let key in results){
-                
-        }
-        // console.log(Object.values(results))
+        let three = count.find(function (x){ return x > 2})
+        if(three > 2){
+                amount *= 2
+        }return amount;
+}
+
+function left() {
+
 }
 
 function getRandomSlots() {
@@ -102,3 +100,20 @@ function renderResults() {
         imgEl4.src = SLOT_LOOKUP[results.sL4];
         imgEl5.src = SLOT_LOOKUP[results.sL5];
 }
+
+// const tally = five.reduce(function(x,y) {
+        //         console.log('y',y)
+        //         console.log('x',x)
+        //         x[y] = x[y] ? x[y] + 1 : 1;
+        //         // if(x > 2) return x + 2 ;
+        //         // console.log(x);
+        //         return x ;
+        // })
+        // for(let key in count){
+        //         if(count[key] > 2){
+        //         amount *= 2;
+        //         console.log(amount);
+        // } 
+        //         return amount;
+        // }
+        // console.log(count);     
