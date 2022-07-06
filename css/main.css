@@ -38,6 +38,24 @@ section {
     border: 5px solid grey;
 }
 
+.lights {
+    height:60px;
+    width: 500px;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    background-color: grey;
+    border: 5px solid grey;
+    gap: 5px;
+}
+.steward {
+    display: flex;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
 .slot-row {
     height: 300px;
     width: 500px;
@@ -57,6 +75,7 @@ section {
     align-items: center;
     background-color: black;
 }
+
 
 div>button {
     display: block;

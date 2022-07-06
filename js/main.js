@@ -6,6 +6,10 @@ const SLOT_LOOKUP = {
     4: "https://www.usaonlinecasino.com/wp-content/uploads/2019/04/if_casino_slot_poker_money_834387.png",
     5: "https://www.katiewager.com/wp-content/uploads/2018/05/slot-machine-1.png",
 };
+const LIGHTS_LOOKUP = {
+    '1': "https://cdn0.iconfinder.com/data/icons/security-hand-drawn-vol-3-1/52/light__emergency__police__security-512.png",
+    '-1': "https://cdn3.iconfinder.com/data/icons/security-and-protection-free/32/Security_Security_Protection_Emergency_Alert_Light-512.png",
+}
 
 /*----- app's state (variables) -----*/
 let gameStatus;
@@ -23,6 +27,11 @@ let imgEl2 = document.getElementById('sect2');
 let imgEl3 = document.getElementById('sect3');
 let imgEl4 = document.getElementById('sect4');
 let imgEl5 = document.getElementById('sect5');
+let lightEl1 = document.getElementById('lht-1');
+let lightEl2 = document.getElementById('lht-2');
+let lightEl3 = document.getElementById('lht-3');
+let lightEl4 = document.getElementById('lht-4');
+let lightEl5 = document.getElementById('lht-5');
 /*----- event listeners -----*/
 switchBtn.addEventListener('click', handleSwitch);
 replayBtn.addEventListener('click', init);
@@ -39,6 +48,14 @@ function init() {
         sL4: 1,
         sL5: 1,
     };
+    lightVar = {
+        L1: -1,
+        L2: -1,
+        L3: -1,
+        L4: -1,
+        L5: -1,
+    }
+
     gameStatus = null;
     switchBtn.style.visibility = 'visible';
     render();
@@ -58,6 +75,8 @@ function handleSwitch(evt) {
     results.sL5 = getRandomSlots();
     amount = getTotal();
     gameStatus = getGameStatus();
+    lightVar = lightsInterval();
+    lightVar.L2 = lightsInterval();
     spinsLeft--;
     render();
 }
@@ -87,20 +106,31 @@ function getTotal() {
 }
 
 function getRandomSlots() {
-    getInterval();
     const rndSlot = Object.keys(SLOT_LOOKUP);
     const rndIdx = Math.floor(Math.random() * rndSlot.length);
     return rndSlot[rndIdx];
 }
 
-function getInterval() {
-     
+function lightsInterval() {
+    // let turn = Object.values(lightVar) ;
+    // const turnon = turn.forEach(function (hi){
+    //     hi *= -1;
+    //     return hi;
+    // })
+
+    // while(turnon === 1){
+    //    return 
+    // }
+    const rndSlot = Object.keys(LIGHTS_LOOKUP);
+    const rndIdx = Math.floor(Math.random() * rndSlot.length);
+    return rndSlot[rndIdx];
 }
 
 function render() {
     renderScore();
     renderResults();
     renderMessage();
+    // renderLights();
     replayBtn.style.visibility = gameStatus ? 'visible' : 'hidden';
 }
 
@@ -111,15 +141,20 @@ function renderScore() {
 
 function renderResults() {
     setTimeout( () => {
-        imgEl1.src = SLOT_LOOKUP[results.sL1]},500);
+        imgEl1.src = SLOT_LOOKUP[results.sL1];
+        lightEl1.src = LIGHTS_LOOKUP[lightVar.L1]},500);
     setTimeout( () => {
-        imgEl2.src = SLOT_LOOKUP[results.sL2]},1000);
+        imgEl2.src = SLOT_LOOKUP[results.sL2];
+        lightEl2.src = LIGHTS_LOOKUP[lightVar.L2]},1000);
     setTimeout( () => {
-        imgEl3.src = SLOT_LOOKUP[results.sL3]},1500)
+        imgEl3.src = SLOT_LOOKUP[results.sL3];
+        lightEl3.src = LIGHTS_LOOKUP[lightVar.L3]},1500)
     setTimeout( () => {
-        imgEl4.src = SLOT_LOOKUP[results.sL4]},2000)
+        imgEl4.src = SLOT_LOOKUP[results.sL4];
+        lightEl4.src = LIGHTS_LOOKUP[lightVar.L4]},2000)
     setTimeout( () => {
-        imgEl5.src = SLOT_LOOKUP[results.sL5]},2500)
+        imgEl5.src = SLOT_LOOKUP[results.sL5];
+        lightEl5.src = LIGHTS_LOOKUP[lightVar.L5]},2500)
 }
 
 function renderMessage() {
