@@ -50,6 +50,7 @@ function handleSwitch(evt) {
     if (evt.target.tagName !== 'BUTTON') return;
     // console.log(evt.target)
     //function to randomize the slotmachine results
+    
     results.sL1 = getRandomSlots();
     results.sL2 = getRandomSlots();
     results.sL3 = getRandomSlots();
@@ -86,9 +87,14 @@ function getTotal() {
 }
 
 function getRandomSlots() {
+    getInterval();
     const rndSlot = Object.keys(SLOT_LOOKUP);
     const rndIdx = Math.floor(Math.random() * rndSlot.length);
     return rndSlot[rndIdx];
+}
+
+function getInterval() {
+     
 }
 
 function render() {
@@ -104,11 +110,16 @@ function renderScore() {
 }
 
 function renderResults() {
-    imgEl1.src = SLOT_LOOKUP[results.sL1];
-    imgEl2.src = SLOT_LOOKUP[results.sL2];
-    imgEl3.src = SLOT_LOOKUP[results.sL3];
-    imgEl4.src = SLOT_LOOKUP[results.sL4];
-    imgEl5.src = SLOT_LOOKUP[results.sL5];
+    setTimeout( () => {
+        imgEl1.src = SLOT_LOOKUP[results.sL1]},500);
+    setTimeout( () => {
+        imgEl2.src = SLOT_LOOKUP[results.sL2]},1000);
+    setTimeout( () => {
+        imgEl3.src = SLOT_LOOKUP[results.sL3]},1500)
+    setTimeout( () => {
+        imgEl4.src = SLOT_LOOKUP[results.sL4]},2000)
+    setTimeout( () => {
+        imgEl5.src = SLOT_LOOKUP[results.sL5]},2500)
 }
 
 function renderMessage() {
