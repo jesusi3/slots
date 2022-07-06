@@ -2,15 +2,17 @@
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
-body{
-    display: block;
-    /* justify-content: center;
-    align-items: center; */
 
+body {
+    display: block;
 }
-h1 {
+
+h1,
+h2 {
     text-align: center;
+    padding-right: 8%;
 }
+
 .parent {
     display: flex;
     justify-content: center;
@@ -19,28 +21,19 @@ h1 {
 
 
 main {
-
-    /* display: grid;
-    height: 300px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 4fr 1fr ; */
-    /* height: 100vh; */
     flex-direction: column;
 }
 
 section {
-    /* display: flex; */
-    flex-direction: row; 
+    flex-direction: row;
 }
-/* .scores{
-    display: grid;
 
-} */
 
 .winnings {
     border: 5px solid grey;
-    
+
 }
+
 .spins {
     border: 5px solid grey;
 }
@@ -53,7 +46,7 @@ section {
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     border: 5px solid grey;
-    gap: 5px ;
+    gap: 5px;
 }
 
 .slot {
@@ -64,21 +57,20 @@ section {
     align-items: center;
     background-color: black;
 }
-div > button{
-    display: block ;
+
+div>button {
+    display: block;
     width: 150%;
     height: 10vh;
 }
-div{
+
+div {
     justify-content: center;
     align-items: center;
 }
-/* .button-div {
-    justify-content: center;
-    align-items: center;
-} */
-.child{
-    display:  inline-block;
+
+.child {
+    display: inline-block;
 }
 
 img {
