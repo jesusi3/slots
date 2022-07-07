@@ -4,7 +4,15 @@
 }
 
 body {
+    color: #897962;
+    margin-inline: 250px;
     display: block;
+    height: 100%;
+    background-color: #E7E2DC;
+}
+.umbrella{
+    height: 100%;
+    background-color: #FFFFFF;
 }
 
 h1,
@@ -12,11 +20,24 @@ h2 {
     text-align: center;
     padding-right: 8%;
 }
+h1 {
+    padding-top: 12px;
+  margin-bottom: -16px;
+    font-size: 40px;
+    text-decoration: underline overline;
+}
+h2 {
+    color: #312B23;
+    font-size: 30px;
+    margin-bottom: 0px;
+}
 
 .parent {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-color: #FFFFFF;
 }
 
 
@@ -29,24 +50,33 @@ section {
 }
 
 
-.winnings {
-    border: 5px solid grey;
 
+.winnings {
+    font-size: large;
+    color: #E7E2DC;
+    border: 5px solid #897962;
+    background-color: #312B23;
+    
+    
 }
 
 .spins {
-    border: 5px solid grey;
+    font-size: large;
+    margin-top: 5px;
+    color: #E7E2DC;
+    border: 5px solid #897962;
+    background-color: #312B23;
 }
 
 .lights {
     height:60px;
-    width: 500px;
+    width: 525px;
     display: grid;
     justify-content: space-between;
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    background-color: white;
-    border: 5px solid white;
+    
+    border: 5px solid transparent;
     gap: 5px;
 }
 .steward {
@@ -57,23 +87,25 @@ section {
 }
 
 .slot-row {
-    height: 300px;
-    width: 500px;
+    height: auto;
+    width: 525px;
     display: grid;
     justify-content: space-between;
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    border: 5px solid grey;
-    gap: 5px;
+    border: 7px solid #897962;
+    gap: 7px;
+    margin-bottom: 5px;
 }
 
 .slot {
-    border: 5px solid black;
-    height: 290px;
+    border: 5px solid #897962;
+    height: 275px;
+    width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: #312B23;
 }
 
 
@@ -81,6 +113,14 @@ div>button {
     display: block;
     width: 150%;
     height: 10vh;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    background-color: #897962;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px #999;
+    margin-left: 5px;
 }
 
 div {
@@ -94,4 +134,26 @@ div {
 
 img {
     width: 100%;
+}
+
+#switch:hover {
+    background-color: #312B23;
+    opacity: 1;
+}
+#switch:active {
+    background-color: #E7E2DC;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+#play-again {
+    background-color: #312B23;
+}
+#play-again:hover {
+    background-color: #E7E2DC;
+    opacity: 1;
+}
+#play-again:active {
+    background-color: #897962;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }

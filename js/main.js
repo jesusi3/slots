@@ -85,23 +85,11 @@ function lightsBlankout() {
     lightEl4.src = LIGHTS_LOOKUP[1];
     lightEl5.src = LIGHTS_LOOKUP[1];
 }
-function lightsOn(){
-    setTimeout( () => {
-        lightEl1.src = LIGHTS_LOOKUP[-1]},500);
-    setTimeout( () => {
-        lightEl2.src = LIGHTS_LOOKUP[-1]},1000);
-    setTimeout( () => {
-        lightEl3.src = LIGHTS_LOOKUP[-1]},1500);
-    setTimeout( () => {
-        lightEl4.src = LIGHTS_LOOKUP[-1]},2000);
-    setTimeout( () => {
-        lightEl5.src = LIGHTS_LOOKUP[-1]},2500);
-}
 function getGameStatus() {
     if (spinsLeft > 1) {
         return null;
     } else
-        switchBtn.style.visibility = gameStatus ? 'visible' : 'hidden';
+    switchBtn.style.visibility = gameStatus ? 'visible' : 'hidden';
     return 'A';
 }
 
@@ -111,7 +99,7 @@ function getTotal() {
         tally[vote] = tally[vote] ? tally[vote] + 1 : 1;
         return tally;
     }, [])
-
+    
     let three = count.find(function(x) {
         return x > 2
     })
@@ -133,38 +121,52 @@ function render() {
     renderMessage();
     replayBtn.style.visibility = gameStatus ? 'visible' : 'hidden';
     renderResults();
+    lightsOn();
 }
 
 function renderScore() {
     setTimeout( () => {
-    winnEl.textContent = amount},2500);
-    SpinEl.textContent = spinsLeft;
-}
-
+        winnEl.textContent = amount},2500);
+        SpinEl.textContent = spinsLeft;
+    }
+    
 function renderResults() {
     setTimeout( () => {
         imgEl1.src = SLOT_LOOKUP[results.sL1];
-        lightEl1.src = LIGHTS_LOOKUP[lightVar.L1]},500);
+    },500);
     setTimeout( () => {
         imgEl2.src = SLOT_LOOKUP[results.sL2];
-        lightEl2.src = LIGHTS_LOOKUP[lightVar.L2]},1000);
+    },1000);
     setTimeout( () => {
         imgEl3.src = SLOT_LOOKUP[results.sL3];
-        lightEl3.src = LIGHTS_LOOKUP[lightVar.L3]},1500);
+    },1500);
     setTimeout( () => {
         imgEl4.src = SLOT_LOOKUP[results.sL4];
-        lightEl4.src = LIGHTS_LOOKUP[lightVar.L4]},2000);
+    },2000);
     setTimeout( () => {
         imgEl5.src = SLOT_LOOKUP[results.sL5];
-        lightEl5.src = LIGHTS_LOOKUP[lightVar.L5]},2500);
+    },2500);
 }
 
+function lightsOn(){
+    setTimeout( () => {
+        lightEl1.src = LIGHTS_LOOKUP[-1]},500);
+    setTimeout( () => {
+        lightEl2.src = LIGHTS_LOOKUP[-1]},1000);
+    setTimeout( () => {
+        lightEl3.src = LIGHTS_LOOKUP[-1]},1500);
+    setTimeout( () => {
+        lightEl4.src = LIGHTS_LOOKUP[-1]},2000);
+    setTimeout( () => {
+        lightEl5.src = LIGHTS_LOOKUP[-1]},2500);
+}
 function renderMessage() {
     if (gameStatus === null) {
         setTimeout( () => {
             msgEl.textContent = `You have ${amount}`},2500);
-    } else if (gameStatus === 'A') {
-        setTimeout( () => {
-        msgEl.textContent = `Congratulations, You've Won ${amount}`},2500);
-    }
-}
+        } else if (gameStatus === 'A') {
+            setTimeout( () => {
+                msgEl.textContent = `Congratulations, You've Won ${amount}`},2500);
+            }
+        }
+        
