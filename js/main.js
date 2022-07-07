@@ -2,15 +2,14 @@
 const SLOT_LOOKUP = {
     1: "https://cdn3.iconfinder.com/data/icons/slot-machine-symbols-filled-outline/256/plum-128.png",
     2: "https://www.shareicon.net/data/256x256/2016/10/11/841519_numbers_512x512.png",
-    // 3: "https://cdn3.iconfinder.com/data/icons/slot-machine-symbols-filled-outline/256/cherry-128.png",
-    // 4: "https://www.usaonlinecasino.com/wp-content/uploads/2019/04/if_casino_slot_poker_money_834387.png",
-    // 5: "https://www.katiewager.com/wp-content/uploads/2018/05/slot-machine-1.png",
+    3: "https://cdn3.iconfinder.com/data/icons/slot-machine-symbols-filled-outline/256/cherry-128.png",
+    4: "https://www.usaonlinecasino.com/wp-content/uploads/2019/04/if_casino_slot_poker_money_834387.png",
+    5: "https://www.katiewager.com/wp-content/uploads/2018/05/slot-machine-1.png",
 };
 const LIGHTS_LOOKUP = {
     '1': "https://cdn0.iconfinder.com/data/icons/security-hand-drawn-vol-3-1/52/light__emergency__police__security-512.png",
     '-1': "https://cdn3.iconfinder.com/data/icons/security-and-protection-free/32/Security_Security_Protection_Emergency_Alert_Light-512.png",
 }
-
 /*----- app's state (variables) -----*/
 let gameStatus;
 let spinsleft;
@@ -65,7 +64,6 @@ function init() {
 function handleSwitch(evt) {
     //guard
     if (evt.target.tagName !== 'BUTTON') return;
-    // console.log(evt.target)
     //function to randomize the slotmachine results
     results.sL1 = getRandomSlots();
     results.sL2 = getRandomSlots();
@@ -77,16 +75,27 @@ function handleSwitch(evt) {
     lightVar = lightsBlankout()
     spinsLeft--;
     render();
-    renderResults();
 }
 
 function lightsBlankout() {
-    // lightEl1.src = LIGHTS_LOOKUP[-1];
+    lightsOn();
+    lightEl1.src = LIGHTS_LOOKUP[1];
     lightEl2.src = LIGHTS_LOOKUP[1];
     lightEl3.src = LIGHTS_LOOKUP[1];
     lightEl4.src = LIGHTS_LOOKUP[1];
     lightEl5.src = LIGHTS_LOOKUP[1];
-    
+}
+function lightsOn(){
+    setTimeout( () => {
+        lightEl1.src = LIGHTS_LOOKUP[-1]},500);
+    setTimeout( () => {
+        lightEl2.src = LIGHTS_LOOKUP[-1]},1000);
+    setTimeout( () => {
+        lightEl3.src = LIGHTS_LOOKUP[-1]},1500);
+    setTimeout( () => {
+        lightEl4.src = LIGHTS_LOOKUP[-1]},2000);
+    setTimeout( () => {
+        lightEl5.src = LIGHTS_LOOKUP[-1]},2500);
 }
 function getGameStatus() {
     if (spinsLeft > 1) {
