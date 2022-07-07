@@ -2,9 +2,9 @@
 const SLOT_LOOKUP = {
     1: "https://cdn3.iconfinder.com/data/icons/slot-machine-symbols-filled-outline/256/plum-128.png",
     2: "https://www.shareicon.net/data/256x256/2016/10/11/841519_numbers_512x512.png",
-    3: "https://cdn3.iconfinder.com/data/icons/slot-machine-symbols-filled-outline/256/cherry-128.png",
-    4: "https://www.usaonlinecasino.com/wp-content/uploads/2019/04/if_casino_slot_poker_money_834387.png",
-    5: "https://www.katiewager.com/wp-content/uploads/2018/05/slot-machine-1.png",
+    // 3: "https://cdn3.iconfinder.com/data/icons/slot-machine-symbols-filled-outline/256/cherry-128.png",
+    // 4: "https://www.usaonlinecasino.com/wp-content/uploads/2019/04/if_casino_slot_poker_money_834387.png",
+    // 5: "https://www.katiewager.com/wp-content/uploads/2018/05/slot-machine-1.png",
 };
 const LIGHTS_LOOKUP = {
     '1': "https://cdn0.iconfinder.com/data/icons/security-hand-drawn-vol-3-1/52/light__emergency__police__security-512.png",
@@ -67,7 +67,6 @@ function handleSwitch(evt) {
     if (evt.target.tagName !== 'BUTTON') return;
     // console.log(evt.target)
     //function to randomize the slotmachine results
-    
     results.sL1 = getRandomSlots();
     results.sL2 = getRandomSlots();
     results.sL3 = getRandomSlots();
@@ -75,12 +74,20 @@ function handleSwitch(evt) {
     results.sL5 = getRandomSlots();
     amount = getTotal();
     gameStatus = getGameStatus();
-    lightVar = lightsInterval();
-    lightVar.L2 = lightsInterval();
+    lightVar = lightsBlankout()
     spinsLeft--;
     render();
+    renderResults();
 }
 
+function lightsBlankout() {
+    // lightEl1.src = LIGHTS_LOOKUP[-1];
+    lightEl2.src = LIGHTS_LOOKUP[1];
+    lightEl3.src = LIGHTS_LOOKUP[1];
+    lightEl4.src = LIGHTS_LOOKUP[1];
+    lightEl5.src = LIGHTS_LOOKUP[1];
+    
+}
 function getGameStatus() {
     if (spinsLeft > 1) {
         return null;
@@ -111,31 +118,17 @@ function getRandomSlots() {
     return rndSlot[rndIdx];
 }
 
-function lightsInterval() {
-    // let turn = Object.values(lightVar) ;
-    // const turnon = turn.forEach(function (hi){
-    //     hi *= -1;
-    //     return hi;
-    // })
-
-    // while(turnon === 1){
-    //    return 
-    // }
-    const rndSlot = Object.keys(LIGHTS_LOOKUP);
-    const rndIdx = Math.floor(Math.random() * rndSlot.length);
-    return rndSlot[rndIdx];
-}
 
 function render() {
     renderScore();
-    renderResults();
     renderMessage();
-    // renderLights();
     replayBtn.style.visibility = gameStatus ? 'visible' : 'hidden';
+    renderResults();
 }
 
 function renderScore() {
-    winnEl.textContent = amount;
+    setTimeout( () => {
+    winnEl.textContent = amount},2500);
     SpinEl.textContent = spinsLeft;
 }
 
@@ -148,19 +141,21 @@ function renderResults() {
         lightEl2.src = LIGHTS_LOOKUP[lightVar.L2]},1000);
     setTimeout( () => {
         imgEl3.src = SLOT_LOOKUP[results.sL3];
-        lightEl3.src = LIGHTS_LOOKUP[lightVar.L3]},1500)
+        lightEl3.src = LIGHTS_LOOKUP[lightVar.L3]},1500);
     setTimeout( () => {
         imgEl4.src = SLOT_LOOKUP[results.sL4];
-        lightEl4.src = LIGHTS_LOOKUP[lightVar.L4]},2000)
+        lightEl4.src = LIGHTS_LOOKUP[lightVar.L4]},2000);
     setTimeout( () => {
         imgEl5.src = SLOT_LOOKUP[results.sL5];
-        lightEl5.src = LIGHTS_LOOKUP[lightVar.L5]},2500)
+        lightEl5.src = LIGHTS_LOOKUP[lightVar.L5]},2500);
 }
 
 function renderMessage() {
     if (gameStatus === null) {
-        msgEl.textContent = `You have ${amount}`
+        setTimeout( () => {
+            msgEl.textContent = `You have ${amount}`},2500);
     } else if (gameStatus === 'A') {
-        msgEl.textContent = `Congratulations, You've Won ${amount}`
+        setTimeout( () => {
+        msgEl.textContent = `Congratulations, You've Won ${amount}`},2500);
     }
 }

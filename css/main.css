@@ -45,8 +45,8 @@ section {
     justify-content: space-between;
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    background-color: grey;
-    border: 5px solid grey;
+    background-color: white;
+    border: 5px solid white;
     gap: 5px;
 }
 .steward {
