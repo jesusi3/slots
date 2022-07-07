@@ -1,18 +1,21 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
+    font-family: 'Lora', serif;
 }
 
 body {
+
     color: #897962;
     margin-inline: 250px;
     display: block;
     height: 100%;
     background-color: #E7E2DC;
 }
+
 .umbrella{
-    height: 100%;
     background-color: #FFFFFF;
+    padding-top: 12px;
+    margin-bottom: -16px;
 }
 
 h1,
@@ -21,8 +24,8 @@ h2 {
     padding-right: 8%;
 }
 h1 {
-    padding-top: 12px;
-  margin-bottom: -16px;
+    padding-top: 0;
+    margin-bottom: -16px;
     font-size: 40px;
     text-decoration: underline overline;
 }
