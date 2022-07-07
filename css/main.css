@@ -40,7 +40,6 @@ h2 {
     background-color: #FFFFFF;
 }
 
-
 main {
     flex-direction: column;
 }
@@ -49,15 +48,11 @@ section {
     flex-direction: row;
 }
 
-
-
 .winnings {
     font-size: large;
     color: #E7E2DC;
     border: 5px solid #897962;
-    background-color: #312B23;
-    
-    
+    background-color: #312B23;  
 }
 
 .spins {
@@ -75,7 +70,6 @@ section {
     justify-content: space-between;
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    
     border: 5px solid transparent;
     gap: 5px;
 }
@@ -140,18 +134,22 @@ img {
     background-color: #312B23;
     opacity: 1;
 }
+
 #switch:active {
     background-color: #E7E2DC;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }
+
 #play-again {
     background-color: #312B23;
 }
+
 #play-again:hover {
     background-color: #E7E2DC;
     opacity: 1;
 }
+
 #play-again:active {
     background-color: #897962;
     box-shadow: 0 5px #666;
