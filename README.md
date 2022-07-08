@@ -44,7 +44,7 @@ Remember you only have 5 turns so make them count and pray! After 5 turn you'll 
         4-2. Event listener Switch for next spin  <br />  
 */
 
-/*----- functions -----*/
+/*----- functions -----*/<br />
 /* 5.  create the functions to run the content and logic of the game<br />
         5-1. Initialize() to call for the game to start<br />
         5-2. create a function for for the event listener called handleSwitch()<br />
