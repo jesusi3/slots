@@ -158,3 +158,15 @@ img {
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
+
+@media screen and (max-width: 900px){
+    body{
+        margin-inline: 0;
+    }
+    .umbrella{
+        width: 100%
+    }
+    button{
+        max-width: max-content;
+    }
+}
