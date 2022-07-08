@@ -1,6 +1,6 @@
 # SLOTS
 Hello fellow Gamblers, <br />
-The Game Slots, is a Slots-machine where you put leave your money up to chance. Whether you win or lose, who know. Give your luck a try with a press of a button. You realistically can't lose money, the only is up. To play slots, 'click' the button called switch and wait 2.5 secs for your prize to render.  <br />
+The Game Slots, is a Slots-machine where you put leave your money up to chance. Whether you win or lose, who know. Give your luck a try with a press of a button. You realistically can't lose money. To play slots, 'click' the button called switch and wait 2.5 secs for your prize to render.  <br />
 Remember you only have 5 turns so make them count and pray! After 5 turn you'll be presented with a grand total and an option to play agian. Are you willing to try again?
 
 # Screenshot
@@ -16,7 +16,7 @@ Remember you only have 5 turns so make them count and pray! After 5 turn you'll 
 - CSS
 
 ## Getting Started
-
+"https://jesusi3.github.io/slots/"
 <a href="https://jesusi3.github.io/slots/"></a>
 
 ## Next Steps
