@@ -130,6 +130,7 @@ function render() {
     renderMessage();
     renderResults();
     lightsOn();
+    lightsBlankout();
     replayBtn.style.visibility = gameStatus ? 'visible' : 'hidden';
 }
 
