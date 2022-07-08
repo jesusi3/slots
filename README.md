@@ -1,23 +1,24 @@
 # SLOTS
 Hello fellow Gamblers,
-The Game Slots is a Slots machine in where you put leaveyour money upto chance. Whether you win or lose, who know. Give your luck a try with a press of a button. You realistically can't lose money, the only is up. To play slots, 'click' the button called switch and wait 2.5 secs for your prize to render. Remember you only have 5 turns so make them count and pray! After 5 turn you'll be presented with a grand total and an option to play agian. Are you willing to try again?
+The Game Slots is a Slots-machine where you put leave your money up to chance. Whether you win or lose, who know. Give your luck a try with a press of a button. You realistically can't lose money, the only is up. To play slots, 'click' the button called switch and wait 2.5 secs for your prize to render. Remember you only have 5 turns so make them count and pray! After 5 turn you'll be presented with a grand total and an option to play agian. Are you willing to try again?
 
 # Screenshot
 
 <img src="wireframe/IMG-7851.jpeg">
-<img src="url to your image on imgur">
+<img src="wireframe/Screenshot 2022-07-08 012112.png">
+<img src="wireframe/finished slots.png">
 
-# Technologies Used
+## Technologies Used
 
 - JavaScript
 - HTML
 - CSS
 
-# Getting Started
+## Getting Started
 
 [Click to Play Connect Four!](your deployment url here)
 
-# Next Steps
+## Next Steps
 
 - Future enhancement one...
 - Future enhancement two... 
