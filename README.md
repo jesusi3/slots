@@ -15,6 +15,9 @@ Remember you only have 5 turns so make them count and pray! After 5 turn you'll 
 - JavaScript
 - HTML
 - CSS
+- GitHub
+- VScode
+
 ### pseudocode
 /*----- constants -----*/<br />
 /* 1. we create the variable that wont change <br />
