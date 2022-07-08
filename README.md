@@ -16,53 +16,53 @@ Remember you only have 5 turns so make them count and pray! After 5 turn you'll 
 - HTML
 - CSS
 ### pseudocode
-/*----- constants -----*/
-/* 1. we create the variable that wont change 
-        1-1. A variable for The number of time you can spin in one game (5)
+/*----- constants -----*/<br />
+/* 1. we create the variable that wont change <br />
+        1-1. A variable for The number of time you can spin in one game (5)<br />
 */
 
-/*----- app's state (variables) -----*/
-/* 2. variables that change throughout the game  
-        2-1. a variable for how many spins left
-        2-2. a varibale for the 5 changing slots
-        2-3. a variable for the winnings each spin
-        2-4. a variable for indientfy the gamestatus
+/*----- app's state (variables) -----*/<br />
+/* 2. variables that change throughout the game  <br />
+        2-1. a variable for how many spins left<br />
+        2-2. a varibale for the 5 changing slots<br />
+        2-3. a variable for the winnings each spin<br />
+        2-4. a variable for indientfy the gamestatus<br />
 */
 
-/*----- cached element references -----*/
-/* 3. pull the html documents into javascript
-3-1. cach the winnings tag 
-3-2. cach the playagain button
-3-3. cach the switch
-3-4. cach slot sections
-3-5. cach the spins-left section
-*/
+/*----- cached element references -----*/<br />
+/* 3. pull the html documents into javascript<br />
+3-1. cach the winnings tag <br />
+3-2. cach the playagain button<br />
+3-3. cach the switch<br />
+3-4. cach slot sections<br />
+3-5. cach the spins-left section<br />
+*/<br />
 
-/*----- event listeners -----*/
-/* 4. create event listeners for the slots
-        4-1. Event listener play again
-        4-2. Event listener Switch for next spin    
+/*----- event listeners -----*/<br />
+/* 4. create event listeners for the slots<br />
+        4-1. Event listener play again<br />
+        4-2. Event listener Switch for next spin  <br />  
 */
 
 /*----- functions -----*/
-/* 5.  create the functions to run the content and logic of the game
-        5-1. Initialize() to call for the game to start
-        5-2. create a function for for the event listener called handleSwitch()
-        5-3. create a function that gets the game status and judges whether to end, or keep playing
-        5-4. create a function that calcuates the amount of combos to get money
-        5-5. create a function that renders the slots on the screen
-        5-6. create a fucntion that initializes the whole game, so rests everything to zero
+/* 5.  create the functions to run the content and logic of the game<br />
+        5-1. Initialize() to call for the game to start<br />
+        5-2. create a function for for the event listener called handleSwitch()<br />
+        5-3. create a function that gets the game status and judges whether to end, or keep playing<br />
+        5-4. create a function that calcuates the amount of combos to get money<br />
+        5-5. create a function that renders the slots on the screen<br />
+        5-6. create a fucntion that initializes the whole game, so rests everything to zero<br />
 
 */
-## Getting Started
-"https://jesusi3.github.io/slots/"
-- for instructions on how to play refer to the intro 
+## Getting Started<br />
+"https://jesusi3.github.io/slots/"<br />
+- for instructions on how to play refer to the intro <br />
 
-## Next Steps
-Ice box Items that i'd liked to include would be ...<br />
+## Next Steps<br />
+Ice box Items that i'd liked to include would be ...<br /><br />
 - An up and down down joystick!<br />
 - A slot spin animation!<br />
 
 ## Honoray Mention
 - Kenneth & Mario(Polished my code)<br />
-- Andrew & Zachary(walked me through bugs)
+- Andrew & Zachary(walked me through bugs)<br />
