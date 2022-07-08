@@ -7,8 +7,6 @@ const SLOT_LOOKUP = {
     5: "https://www.katiewager.com/wp-content/uploads/2018/05/slot-machine-1.png",
   }
   
-  
-  
 const LIGHTS_LOOKUP = {
 '1': "https://cdn0.iconfinder.com/data/icons/security-hand-drawn-vol-3-1/52/light__emergency__police__security-512.png",
 '-1': "https://cdn3.iconfinder.com/data/icons/security-and-protection-free/32/Security_Security_Protection_Emergency_Alert_Light-512.png",
