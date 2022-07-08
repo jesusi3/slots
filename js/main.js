@@ -114,7 +114,6 @@ function getGameStatus() {
     if (three > 2) {
       amount *= 2;
     }
-  
     return amount;
   }
 
